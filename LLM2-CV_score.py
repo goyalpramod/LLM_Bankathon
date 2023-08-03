@@ -1,12 +1,14 @@
-from langchain.document_loaders import UnstructuredPDFLoader
-from langchain.indexes import VectorstoreIndexCreator
+from dotenv import load_dotenv, find_dotenv
+import openai
 import os
 from PyPDF2 import PdfReader
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage, AIMessage
 
+load_dotenv(find_dotenv())
+openai.api_key = os.environ["OPENAI_API_KEY"]
 # from resume_parser import resumeparse
-os.environ["OPENAI_API_KEY"] = ""
+# os.environ["OPENAI_API_KEY"] = ""
 
 with open("exampleCV.pdf", 'rb') as pdf:
     pdf_reader = PdfReader(pdf)
@@ -17,7 +19,7 @@ with open("exampleCV.pdf", 'rb') as pdf:
 data = text
 
 
-chat = ChatOpenAI(temperature=.7, model_name="gpt-3.5-turbo-16k")
+chat = ChatOpenAI(temperature=1.0, model_name="gpt-3.5-turbo-16k")
 jd="SEO manager. High social marketing skills required"
 system_prompt = f"""
 You are an AI model that scores CVs using different criteria with different score points allocated to each criteria.
