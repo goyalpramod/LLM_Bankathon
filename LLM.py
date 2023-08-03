@@ -96,25 +96,25 @@ openai.api_key = os.environ["OPENAI_API_KEY"]
 # text: {input}
 # """
 
-# data = """
-# Billing Manager,Responsibilities
-# Oversee the preparation of statements and bills
-# Maintain and/or ensure maintenance of client records related to invoicing and bill payment
-# Review work of billing staff to ensure accuracy, resolving inconsistencies as needed
-# Create and provide a prioritized list of clients to be invoiced to team members
-# Locate, or assist in the location of, hard-to-reach clients
-# Draft and distribute weekly reports of invoicing and billing metrics
-# Advise staff on proper, legal parameters for collections practices
-# Provide customer support to customers with disputes or inquiries concerning invoices or billing process
-# Requirements and skills
-# Proven work experience as a Billing Manager or similar role
-# Excellent verbal and written communication skills
-# Proficient in Microsoft Office Suite or related software
-# Basic understanding of collection practices and laws
-# Excellent interpersonal and supervisory skills
-# Ability to act with discretion, tact, and professionalism in all situations
-# Relevant training and/or certifications as a Billing Manager
-# """
+data = """
+Billing Manager,Responsibilities
+Oversee the preparation of statements and bills
+Maintain and/or ensure maintenance of client records related to invoicing and bill payment
+Review work of billing staff to ensure accuracy, resolving inconsistencies as needed
+Create and provide a prioritized list of clients to be invoiced to team members
+Locate, or assist in the location of, hard-to-reach clients
+Draft and distribute weekly reports of invoicing and billing metrics
+Advise staff on proper, legal parameters for collections practices
+Provide customer support to customers with disputes or inquiries concerning invoices or billing process
+Requirements and skills
+Proven work experience as a Billing Manager or similar role
+Excellent verbal and written communication skills
+Proficient in Microsoft Office Suite or related software
+Basic understanding of collection practices and laws
+Excellent interpersonal and supervisory skills
+Ability to act with discretion, tact, and professionalism in all situations
+Relevant training and/or certifications as a Billing Manager
+"""
 
 
 # prompt_template = ChatPromptTemplate.from_template(template=template)
