@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>HRLogicx</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    {% load static %}
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <link href="{% static 'LandingPage/stylesheet.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header id="header" class="fixed-top">
+      <h1 class="logo"><a href="index.html">HRLogicx</a></h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#services">Features</a></li>
+          <li><a class="nav-link scrollto" href="#team">Our Team</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="login-btn scrollto"
+        ><span class="d-none d-md-inline">Login</span>
+      </a>
+    </header>
+
+    <section id="hero" class="d-flex align-items-center">
+      <div class="container text-center">
+        <h1 class="hero-title">
+          Simplify HR. Amplify Results. Empower Success.
+        </h1>
+        <h3 class="hero-subtitle">
+          Say Goodbye to Tedious Manual Efforts and Embrace the Future of Smart
+          Hiring Solutions for Maximum Efficiency and Unmatched Talent.
+        </h3>
+        <a href="#" class="btn-get-started scrollto">Get Started</a>
+      </div>
+    </section>
+
+    <main id="main">
+      <section id="services" class="services">
+        <div class="container">
+          <div class="section-title">
+            <h2>Features</h2>
+            <p>
+              Our ultimate goal is to optimize HR operations, minimize manual
+              efforts, enhance decision-making, and improve the overall employee
+              experience.
+            </p>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+              <div class="icon-box">
+                <div class="icon"><i class="fas fa-heartbeat"></i></div>
+                <h4><a href="">Job Description Evaluation</a></h4>
+                <p>
+                  Optimize your job postings with our LLM-based application. We
+                  analyze job descriptions and provide enhancement
+                  recommendations based on the job title. Choose to implement
+                  suggested changes for attracting top talent effortlessly.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
+            >
+              <div class="icon-box">
+                <div class="icon"><i class="fas fa-pills"></i></div>
+                <h4><a href="">CV Ranking and Candidate Shortlisting</a></h4>
+                <p>
+                  Simplify recruitment with our CV ranking feature. We rank CVs
+                  based on job requirements, enabling quick identification of
+                  the best-fit candidates. Get additional insights for informed
+                  hiring decisions.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0"
+            >
+              <div class="icon-box">
+                <div class="icon"><i class="fas fa-hospital-user"></i></div>
+                <h4><a href="">Tailored Screening Questions</a></h4>
+                <p>
+                  Streamline interviews with tailored screening questions.
+                  Evaluate candidate responses and make way for successful
+                  in-person rounds.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="team" class="team">
+        <div class="container">
+          <div class="section-title">
+            <h2>Our Team</h2>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="member d-flex align-items-start">
+                <div class="pic">
+                  <img
+                    src="{% static 'assets/team_img/Paneer.jpg' %}"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <div class="member-info">
+                  <h4>Sai Praneetha</h4>
+                  <span>Front-end Developer and Ui/UX Designer</span>
+                  <p>
+                    Aut maiores voluptates amet et quis praesentium qui senda
+                    para
+                  </p>
+                  <div class="social">
+                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="member d-flex align-items-start">
+                <div class="pic">
+                  <img
+                    src="{% static 'assets/img/doctors/doctors-4.jpg' %}"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <div class="member-info">
+                  <h4>Sai Praneetha</h4>
+                  <span>Front-end Developer and Ui/UX Designer</span>
+                  <p>
+                    Aut maiores voluptates amet et quis praesentium qui senda
+                    para
+                  </p>
+                  <div class="social">
+                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="member d-flex align-items-start">
+                <div class="pic">
+                  <img
+                    src="{% static 'LandingPage/team_img/Paneer.jpg' %}"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <div class="member-info">
+                  <h4>Sai Praneetha</h4>
+                  <span>Front-end Developer and Ui/UX Designer</span>
+                  <p>
+                    Aut maiores voluptates amet et quis praesentium qui senda
+                    para
+                  </p>
+                  <div class="social">
+                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="member d-flex align-items-start">
+                <div class="pic">
+                  <img
+                    src="{% static 'LandingPage/img/doctors/doctors-4.jpg' %}"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <div class="member-info">
+                  <h4>Sai Praneetha</h4>
+                  <span>Front-end Developer and Ui/UX Designer</span>
+                  <p>
+                    Aut maiores voluptates amet et quis praesentium qui senda
+                    para
+                  </p>
+                  <div class="social">
+                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'LandingPage/js/main.js' %}"></script>
+  </body>
+</html>
