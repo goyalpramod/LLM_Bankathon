@@ -19,6 +19,7 @@ A detailed job description will be provided to you.
 The job description is {jd}
 Generate at least 20 questions with their toughness.
 Also provide answers for them.
+Scale the question toughness with respect to the previous experience requirements. 
 IMPORTANT do not reply with "As an AI model..." under any circumstances 
 """
 
