@@ -28,7 +28,9 @@ There may be some words spelled wrong or joined words due to formatting issues, 
 Make sure the following is available in the CV:
 1. College and degree awarded
 
-The most important scoring criteria is relevance the to the job description {jd}
+The most important scoring criteria is relevance the to the job description
+The jd is provided to you in triple back ticks 
+```{jd}```
 Maximum score of the CV can be 150
 IMPORTANT do not reply with "As an AI model..." under any circumstances 
 IMPORTANT DO NOT REMOVE OR CHANGE ANY OF THE ORIGINAL TEXT PROVIDED TO YOU THAT ARE NOT GETTING IMPROVED
@@ -123,9 +125,18 @@ Email: samarthrawat1@gmail.com
 Phone:+9197723459443
 
 CV score - 75/150
+
+HIGHLIGHTS: 
+-> Has adequent skill based on the job description 
+-> Has a good educational background
+-> Has a good work experience
+
+DEMERITS:
+-> Has not worked with SQL 
+-> No open source contributions
 """
 
-def func_():
+def func_(data):
     store = chat(
         [
             SystemMessage(content=system_prompt),
@@ -136,5 +147,5 @@ def func_():
     )
     return store
 
-store = func_()
+store = func_(data=data)
 print(store.content)
