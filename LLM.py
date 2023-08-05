@@ -116,14 +116,16 @@ At our company, we value innovation, collaboration, and customer-centricity. We 
 Benefits:
 We offer competitive benefits, including health insurance, retirement plans, flexible work hours, and opportunities for career advancement. Join our team and embark on a journey of continuous learning and professional growth.
 """
+def func_(data):
+    store = chat(
+        [
+            SystemMessage(content=system_prompt),
+            HumanMessage(content=human_message_example),
+            AIMessage(content=AI_message_example),
+            HumanMessage(content=data)
+        ]
+    )
+    return store
 
-store = chat(
-    [
-        SystemMessage(content=system_prompt),
-        HumanMessage(content=human_message_example),
-        AIMessage(content=AI_message_example),
-        HumanMessage(content=data)
-    ]
-)
-
+store = func_(data=data)
 print(store.content)
