@@ -18,14 +18,7 @@
     --color-background: rgba(255, 255, 255, 0.8);
 
 }
-.dark-theme-variables{
-    --color-background: #181a1e;
-    --color-white: #202528;
-    --color-darktheme: #edeffd;
-    --color-dark-variant: #a3bdcc;
-    --color-lighttheme: rgba(0,0,0,0.4);
-    --box-shadow: 0 2rem 3rem var(--color-lighttheme);
-}
+
 
 *{
     margin:0;
@@ -238,6 +231,25 @@ main .actions > div{
     display: flex; 
     align-items: center;
     height: 14rem;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.main .actions > div .middle .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #D93263;
+    border-radius: 50%;
+    width: 64px; /* Set a fixed width for the icon container */
+    height: 64px;
+    margin-bottom: 1rem;
+    color: var(--color-white);
+    font-size: 3rem;
+}
+.main .cards-links {
+    color: var(--color-info-dark);
 }
 
 main .actions > div:hover{
@@ -251,23 +263,27 @@ main .actions >div span {
     border-radius: 50%;
     color: var(--color-white);
     font-size: 3rem;
-    margin-right: 1rem;
     margin-bottom: 1rem;
+    
 }
 
-main .actions >div .middle{
-display: flex; 
-flex-direction: column;
+
+.main .actions > div .middle {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     text-align: center;
-}
-
+  }
+  
 
     main .actions h3 {
         margin: 1rem 0; 
-        font-size: 1.2rem; 
+        font-size: 1.5rem; 
+    }
+    main .actions small {
+        margin: 0; 
     }
 
 

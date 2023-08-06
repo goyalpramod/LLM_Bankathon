@@ -1,0 +1,62 @@
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #595959;
+            font-family: Arial, sans-serif;
+            background-image: url('your-image.png'); /* Replace 'your-image.png' with the path to your PNG image */
+            background-size: cover;
+        }
+
+        #form-container {
+            width: 90%;
+            max-width: 600px;
+            padding: 40px;
+            border: 2px solid #7B2841;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        h1 {
+            color: #7B2841;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #7B2841;
+            border-radius: 5px;
+            background-color: #E5E5E5;
+            color: #595959;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .save-button {
+            background-color: #D93263;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .save-button:hover {
+            background-color: #C22B55;
+        }

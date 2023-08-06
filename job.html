@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Developer</title>
+    <link href="job_styles.css" rel="stylesheet">
+    <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet" />
+</head>
+
+<body>
+<div class="container">
+    <aside>
+        <div class="top">
+            <div class="logo">
+                <h1>HRLogicx</h1>
+            </div>
+            <div class="close" id="close-btn">
+                <span class="material-symbols-sharp">
+                    close
+                    </span>
+            </div>
+        </div>
+        <div class="sidebar">
+            <a href="#">
+                <span class="material-symbols-sharp">
+                    grid_view
+                    </span>
+                    <h3>Dashboard </h3>
+            </a>
+            <a href="#">
+                <span class="material-symbols-sharp">
+                    task_alt
+                    </span>
+                    <h3>Tasks</h3>
+            </a>
+            <a href="#">
+                <span class="material-symbols-sharp">
+                    chat
+                    </span>
+                    <h3>Messages</h3>
+                    <span class="message-count">26</span>
+            </a>
+            <a href="#">
+                <span class="material-symbols-sharp">
+                    settings
+                    </span>
+                    <h3>Settings</h3>
+            </a>
+            <a href="#">
+                <span class="material-symbols-sharp">
+                    logout
+                    </span>
+                    <h3>Logout</h3>
+            </a>
+        </div>
+    </aside>
+
+
+    <main>
+        <h1>Angular Developer</h1>
+        <div class="drag-image" id="dragCard">
+            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <h6>Drag & Drop File Here</h6>
+            <span>OR</span>
+            <button>Browse File</button>
+            <input type="file" hidden>
+        </div>
+
+    </main>
+    
+    
+    <div class="right">
+        <div class="top">
+            <button id="menu-btn">
+                <span class="material-symbols-sharp">
+                    menu
+                    </span>
+            </button>
+            
+            <div class="profile">
+                <div class="info">
+                     <p>Hey, <b>Priya</b></p>
+                     <small class="text-muted">Admin</small>
+                </div>
+                <div class="profile-photo">
+                    <img src="{{ asset('assets/images/avatar.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+         <div class="recent-updates">
+            <h2>Recent Updates</h2>
+            <div class="updates">
+                <div class="update">
+                    <div class="profile-photo">
+                        <img src="{{ asset('assets/images/avatar10.jpg') }}">
+                    </div>
+                    <div class="message">
+                        <p>The candidates have been <b>shortlisted!</b></p>
+                        <small class="text-muted">2 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="updates">
+                <div class="update">
+                    <div class="profile-photo">
+                        <img src="{{ asset('assets/images/avatar10.jpg') }}">
+                    </div>
+                    <div class="message">
+                        <p>The candidates have been <b>shortlisted!</b></p>
+                        <small class="text-muted">2 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="updates">
+                <div class="update">
+                    <div class="profile-photo">
+                        <img src="{{ asset('assets/images/avatar10.jpg') }}">
+                    </div>
+                    <div class="message">
+                        <p>The candidates have been <b>shortlisted!</b></p>
+                        <small class="text-muted">2 mins ago</small>
+                    </div>
+                </div>
+            </div>
+         </div>
+         
+         <div class="progress-bar">
+            <div class="step">
+              <span class="label">Step 1</span>
+            </div>
+            <div class="step">
+              <span class="label">Step 2</span>
+            </div>
+            <div class="step">
+              <span class="label">Step 3</span>
+            </div>
+            <div class="step">
+              <span class="label">Step 4</span>
+            </div>
+            <div class="step">
+              <span class="label">Step 5</span>
+            </div>
+            <div class="step">
+              <span class="label">Step 6</span>
+            </div>
+          </div>
+           
+    </div>
+</div>
+<script src="main.js"></script>
+
+</body>
+
+</html>
