@@ -1,0 +1,154 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #595959;
+    font-family: "Open Sans", sans-serif;
+    background-image: url('bg.png'); 
+    background-size: cover;
+}
+
+#form-container {
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+    border: 2px solid #7B2841;
+    border-radius: 10px;
+    background-color: white;
+}
+
+h1 {
+    color: #7B2841;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="text"],
+        textarea {
+            width: 95%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #7B2841;
+            border-radius: 5px;
+            background-color: #E5E5E5;
+            color: #595959;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .save-button {
+            background-color: #D93263;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .save-button:hover {
+            background-color: #C22B55;
+        }
+        #score-card {
+            width: 25%;
+            display: inline-block;
+            vertical-align: top;
+            background-color: #D93263;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #score-card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        #result-box {
+            width: 60%;
+            height: auto;
+            display: inline-block;
+            vertical-align: top;
+            border: 2px solid #7B2841;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #E5E5E5;
+            margin-top: 20px;
+            margin-left: 2%;
+        }
+
+        #result-box h3 {
+            margin: 0;
+            margin-bottom: 10px;
+            color: #7B2841;
+        }
+
+        #result-box p {
+            margin: 0;
+        }
+
+        #question-container {
+            width: 25%;
+            display: none;
+            margin-top: 0; /* Add gap of 0.5rem below score card */
+            text-align: center;
+        }
+        #question-icon {
+            vertical-align: middle;
+            width: 24px;
+            height: 24px;
+        }
+
+        #question-text {
+            vertical-align: middle;
+            margin-left: 10px;
+            color: #7B2841;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+       
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%; /* Set the width of the popup */
+            max-height: 80%; /* Set the max height of the popup */
+            overflow-y: auto; /* Add vertical scrollbar if needed */
+            background-color: white;
+            padding: 20px;
+            border: 2px solid #7B2841;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        #popup p {
+            margin: 0;
+            color: #595959;
+        }
+        #close-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            color: #7B2841;
+        }
+
+
+  #score-card, #result-box, #question-container{
+    display: none;
+  }
