@@ -71,18 +71,26 @@
             <button>Browse File</button>
             <input type="file" hidden>
         </div>
+        <div class="job-table">
+            <h2>Job applicants</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ranking</th>
+                        <th>Applicant Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                        <th>Page</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
 
     </main>
     
     
     <div class="right">
         <div class="top">
-            <button id="menu-btn">
-                <span class="material-symbols-sharp">
-                    menu
-                    </span>
-            </button>
-            
             <div class="profile">
                 <div class="info">
                      <p>Hey, <b>Priya</b></p>
@@ -130,27 +138,20 @@
             </div>
          </div>
          
-         <div class="progress-bar">
-            <div class="step">
-              <span class="label">Step 1</span>
-            </div>
-            <div class="step">
-              <span class="label">Step 2</span>
-            </div>
-            <div class="step">
-              <span class="label">Step 3</span>
-            </div>
-            <div class="step">
-              <span class="label">Step 4</span>
-            </div>
-            <div class="step">
-              <span class="label">Step 5</span>
-            </div>
-            <div class="step">
-              <span class="label">Step 6</span>
+         <div class="vertical-progress-bar">
+            <div class="wrapper">
+              <ul class="StepProgress">
+                <div class="StepProgress-item is-done"><strong>Post a contest</strong></div>
+                <div class="StepProgress-item is-done"><strong>Award an entry</strong>
+                  Got more entries that you love? Buy more entries anytime! Just hover on your favorite entry and click the
+                  Buy button
+                </div>
+                <div class="StepProgress-item is-done"><strong>Post a contest</strong></div>
+                <div class="StepProgress-item is-done"><strong>Handover</strong></div>
+                <div class="StepProgress-item current"><strong>Provide feedback</strong></div>
+              </ul>
             </div>
           </div>
-           
     </div>
 </div>
 <script src="main.js"></script>
