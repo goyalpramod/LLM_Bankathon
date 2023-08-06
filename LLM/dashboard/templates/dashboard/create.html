@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Description Form</title>
+
+    {% load static %}
+
+    <link href="{% static 'dashboard/create_styles.css' %}" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="form-container">
+      <h1>Job Description Form</h1>
+      <form id="job-form">
+        <div>
+          <label for="job-title">Job Title:</label>
+          <input type="text" id="job-title" name="job-title" required />
+        </div>
+        <div>
+          <label for="job-description">Job Description:</label>
+          <textarea
+            id="job-description"
+            name="job-description"
+            rows="8"
+            required
+            placeholder="Please provide a detailed job description that includes responsibilities, qualifications, and expectations. This will help HR in finding the right candidate for the job."
+          ></textarea>
+        </div>
+        <button type="submit" class="save-button" onclick="showResultBox()">
+          Save
+        </button>
+      </form>
+
+      <div id="result-box" style="display: none">
+        <h2>Result Box</h2>
+        <input type="text" value="llm gives cute stuff" readonly />
+      </div>
+    </div>
+
+    <script src="{% static 'dashboard/LLM_show.js' %}"></script>
+  </body>
+</html>

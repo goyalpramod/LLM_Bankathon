@@ -12,7 +12,7 @@ def login_view(request):
 
         if user:
             login(request, user)
-            return redirect('dashboard')  # Or name of the view you want to redirect to after login.
+            return redirect('dashboard_view')  # Or name of the view you want to redirect to after login.
         else:
             # Show an error or something if the credentials are wrong
             return HttpResponse("Wrong Credentials.")
