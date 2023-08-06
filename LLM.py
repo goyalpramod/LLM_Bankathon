@@ -1,4 +1,5 @@
 import os
+import re
 import openai
 # from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
@@ -128,4 +129,9 @@ def func_(data):
     return store
 
 store = func_(data=data)
+score=re.search(r'\d+', store.content)
+Changes, updatedJD = (store.content.split("Updated Job Description:"))
 print(store.content)
+print(updatedJD)
+print("-"*30)
+print (score.group())
