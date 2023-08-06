@@ -6,8 +6,8 @@
             min-height: 100vh;
             margin: 0;
             color: #595959;
-            font-family: Arial, sans-serif;
-            background-image: url('your-image.png'); /* Replace 'your-image.png' with the path to your PNG image */
+            font-family: "Open Sans", sans-serif;
+            background-image: url('bg.png'); 
             background-size: cover;
         }
 
@@ -34,7 +34,7 @@
 
         input[type="text"],
         textarea {
-            width: 100%;
+            width: 95%;
             padding: 12px;
             margin-bottom: 20px;
             border: 1px solid #7B2841;
@@ -60,3 +60,29 @@
         .save-button:hover {
             background-color: #C22B55;
         }
+
+        #result-box {
+            display: none;
+            border: 1px solid #7B2841;
+            border-radius: 5px;
+            padding: 6px;
+            background-color: white;
+            margin-top: 10px;
+        }
+
+        #result-box h2 {
+            color: #7B2841;
+            margin: 4px;
+        }
+
+        #result-box input[type="text"] {
+            width: 95%;
+            padding: 6px;
+            border: 0.5px solid #7B2841;
+            border-radius: 5px;
+            background-color: #E5E5E5;
+            color: #595959;
+            font-weight: bold;
+         
+        }
+ 
