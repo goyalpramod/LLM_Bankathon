@@ -31,17 +31,40 @@
             placeholder="Please provide a detailed job description that includes responsibilities, qualifications, and expectations. This will help HR in finding the right candidate for the job."
           ></textarea>
         </div>
-        <button type="submit" class="save-button" onclick="showResultBox()">
+        <button
+          type="button"
+          class="save-button"
+          onclick="showScoreAndResult()"
+        >
           Save
         </button>
       </form>
 
-      <div id="result-box" style="display: none">
-        <h2>Result Box</h2>
-        <input type="text" value="llm gives cute stuff" readonly />
+      <div id="score-card">
+        <h2>Score:</h2>
+      </div>
+
+      <div id="result-box">
+        <h3>Result Box</h3>
+        <p></p>
+      </div>
+
+      <div id="question-container">
+        <img id="question-icon" src="question-icon.png" alt="Question Icon" />
+        <span id="question-text" onclick="showPopup()"
+          ><p>Overall Changes:</p></span
+        >
+      </div>
+
+      <div id="popup">
+        <span id="close-button" onclick="closePopup()">Close</span>
+        <p></p>
       </div>
     </div>
 
+    <script>
+      const PROCESS_FORM_URL = "{% url 'process_form' %}";
+    </script>
     <script src="{% static 'dashboard/LLM_show.js' %}"></script>
   </body>
 </html>
