@@ -1,6 +1,7 @@
 from dotenv import load_dotenv, find_dotenv
 import openai
 import os
+import re
 from PyPDF2 import PdfReader
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage, AIMessage
@@ -9,7 +10,7 @@ load_dotenv(find_dotenv())
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
 
-chat = ChatOpenAI(temperature=0.0, model_name="gpt-3.5-turbo-16k")
+chat = ChatOpenAI(temperature=0.6, model_name="gpt-3.5-turbo-16k")
 
 jd="SEO manager. High social marketing skills required"
 
@@ -177,5 +178,26 @@ def func_():
     )
     return store
 
-store = func_()
-print(store.content)
+def separator(store):
+    text=store.content
+    # Regular expression to split the text into questions with their scores and answers
+    question_pattern = r"(\d+)\. (.*?\?) \((.*?)\)\s+(.*?)\n\n"
+
+    # Finding all matches using regular expression
+    matches = re.findall(question_pattern, text, re.DOTALL)
+
+    # Creating a list of dictionaries to store questions, answers, difficulty, and score
+    questions_with_scores_and_answers = [
+        {'Index': match[0], 'Question': match[1], 'Difficulty': match[2], 'Answer': match[3]} for match in matches]
+
+    # Printing the questions with their respective difficulty levels, scores, and answers
+#     for question_info in questions_with_scores_and_answers:
+#         print(f"Question: {question_info['Question']}")
+#         print(f"Difficulty: {question_info['Difficulty']}")
+#         print(f"Index: {question_info['Index']}")
+#         print(f"Answer: {question_info['Answer']}\n")
+    return (questions_with_scores_and_answers)
+# store = func_()
+# print(store.content)
+#
+# print(separator(store))
