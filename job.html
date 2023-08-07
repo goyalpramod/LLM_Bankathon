@@ -78,12 +78,59 @@
                     <tr>
                         <th>Ranking</th>
                         <th>Applicant Name</th>
+                        <th>Positive</th>
+                        <th>Negative</th>
                         <th>Status</th>
                         <th>Action</th>
-                        <th>Page</th>
+                        <th>Questions</th>
                     </tr>
                 </thead>
+                <tbody>
+                    <tr>
+                     <td>1</td>
+                     <td>Mallika</td>
+                     <td>Pretty</td>
+                     <td>Stupid</td>
+                     <td class="status-cell">
+                        <div class="status-text ">Shortlisted</div>
+                        <button class="status-icon tick">
+                            <i class="fas fa-check"></i>
+                        </button>
+                        <button class="status-icon cross">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </td>
+                    <td class="action-cell">
+                        <span class="action-text">Send mail</span>
+                        <button class="action-icon send-mail">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <a href="https://docs.google.com/document/d/your_google_doc_link" target="_blank">See doc</a>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>yuta</td>
+                        <td>Pretty</td>
+                        <td>Stupid</td>
+                        <td class="danger">Rejected</td>
+                        <td>Send Rejection mail</td>
+                        <td>Archive</td>
+                       </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Preetam</td>
+                        <td>Pretty</td>
+                        <td>Stupid</td>
+                        <td class="danger">Rejected</td>
+                        <td>Send rejection mail</td>
+                        <td>Archive</td>
+                       </tr>   
+                </tbody>
             </table>
+            <a href="#">Show All</a>
         </div>
 
     </main>
@@ -142,12 +189,9 @@
             <div class="wrapper">
               <ul class="StepProgress">
                 <div class="StepProgress-item is-done"><strong>Post a contest</strong></div>
-                <div class="StepProgress-item is-done"><strong>Award an entry</strong>
-                  Got more entries that you love? Buy more entries anytime! Just hover on your favorite entry and click the
-                  Buy button
-                </div>
+                <div class="StepProgress-item is-done"><strong>Award an entry</strong></div>
                 <div class="StepProgress-item is-done"><strong>Post a contest</strong></div>
-                <div class="StepProgress-item is-done"><strong>Handover</strong></div>
+                <div class="StepProgress-item current"><strong>Handover</strong></div>
                 <div class="StepProgress-item current"><strong>Provide feedback</strong></div>
               </ul>
             </div>
