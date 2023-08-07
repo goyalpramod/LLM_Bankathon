@@ -51,3 +51,37 @@ function viewfile(){
     dragText.textContent = "Drag & Drop to Upload File";
   }
 }
+
+
+    const statusCell = document.querySelector('.status-cell');
+    const statusText = statusCell.querySelector('.status-text');
+    const statusTick = statusCell.querySelector('.status-icon.tick');
+    const statusCross = statusCell.querySelector('.status-icon.cross');
+    const statusPen = statusCell.querySelector('.status-icon.pen');
+
+    statusTick.addEventListener('click', () => {
+        statusText.innerHTML = 'Shortlisted';
+        statusText.style.backgroundColor = 'var(--color-success)';
+    });
+
+    statusCross.addEventListener('click', () => {
+        statusText.innerHTML = 'Rejected';
+        statusText.style.backgroundColor = 'var(--color-danger)';
+    });
+
+    statusPen.addEventListener('click', () => {
+        const currentStatus = statusText.innerHTML;
+        if (currentStatus === 'Shortlisted') {
+            statusText.innerHTML = 'Rejected';
+            statusText.style.backgroundColor = 'var(--color-danger)';
+        } else if (currentStatus === 'Rejected') {
+            statusText.innerHTML = 'Shortlisted';
+            statusText.style.backgroundColor = 'var(--color-success)';
+        }
+    });
+
+    const sendMailBtn = document.querySelector('.action-icon.send-mail');
+    sendMailBtn.addEventListener('click', () => {
+        window.open('mailto:praneetha2829@gmail.com?subject=&body=', '_blank');
+    });
+
