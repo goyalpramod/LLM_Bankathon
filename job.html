@@ -63,19 +63,28 @@
 
 
     <main>
-        <h1>Angular Developer</h1>
-        <div class="cards-container">
-            
-            <div class="drag-image same-size" id="dragCard">
+        <h1 class="job_title">Angular Developer</h1>
+        <div class="cards-row">
+            <div class="drag-image" id="dragCard">
                 <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
                 <h6>Drag & Drop File Here</h6>
                 <span>OR</span>
                 <button>Browse File</button>
                 <input type="file" hidden>
             </div>
-            <div class="card number-input text-styled same-size">
+            <div class="card number-input text-styled ">
                 <h3>Select no. of candidates</h3>
                 <input type="number" id="candidateCount" value="1" min="1">
+            </div>
+            <div class="card team-collaboration text-styled">
+                <h3>Add Collaborators</h3>
+                <div class="collaborator-input">
+                    <input type="email" id="gmailInput" placeholder="Enter Gmail ID">
+                    <button class="invite-button"> Invite</button>
+                </div>
+                <div class="collaborator-list">
+                    <!-- Collaborator profiles will be added here -->
+                </div>
             </div>
         </div>
         <div class="save-btn-container">
