@@ -64,13 +64,24 @@
 
     <main>
         <h1>Angular Developer</h1>
-        <div class="drag-image" id="dragCard">
-            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-            <h6>Drag & Drop File Here</h6>
-            <span>OR</span>
-            <button>Browse File</button>
-            <input type="file" hidden>
+        <div class="cards-container">
+            
+            <div class="drag-image same-size" id="dragCard">
+                <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                <h6>Drag & Drop File Here</h6>
+                <span>OR</span>
+                <button>Browse File</button>
+                <input type="file" hidden>
+            </div>
+            <div class="card number-input text-styled same-size">
+                <h3>Select no. of candidates</h3>
+                <input type="number" id="candidateCount" value="1" min="1">
+            </div>
         </div>
+        <div class="save-btn-container">
+            <button class="save-btn">Save</button>
+        </div>
+        
         <div class="job-table">
             <h2>Job applicants</h2>
             <table>
@@ -89,26 +100,31 @@
                     <tr>
                      <td>1</td>
                      <td>Mallika</td>
-                     <td>Pretty</td>
+                     <td>Pretty </td>
                      <td>Stupid</td>
                      <td class="status-cell">
-                        <div class="status-text ">Shortlisted</div>
-                        <button class="status-icon tick">
-                            <i class="fas fa-check"></i>
-                        </button>
-                        <button class="status-icon cross">
-                            <i class="fas fa-times"></i>
-                        </button>
+                        <div class="status-text shortlisted">Shortlisted</div>
+                        <div class="status-icons">
+                            <button class="status-icon tick">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button class="status-icon cross">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
                     </td>
+                    
                     <td class="action-cell">
-                        <span class="action-text">Send mail</span>
+                        <span class="action-text send-mail-btn">Send mail</span>
                         <button class="action-icon send-mail">
                             <i class="fas fa-envelope"></i>
                         </button>
                     </td>
+                    
                     <td>
                         <a href="https://docs.google.com/document/d/your_google_doc_link" target="_blank">See doc</a>
                     </td>
+                    
                     </tr>
                     <tr>
                         <td>2</td>

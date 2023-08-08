@@ -57,31 +57,40 @@ function viewfile(){
     const statusText = statusCell.querySelector('.status-text');
     const statusTick = statusCell.querySelector('.status-icon.tick');
     const statusCross = statusCell.querySelector('.status-icon.cross');
-    const statusPen = statusCell.querySelector('.status-icon.pen');
 
-    statusTick.addEventListener('click', () => {
-        statusText.innerHTML = 'Shortlisted';
-        statusText.style.backgroundColor = 'var(--color-success)';
+    const sendMailButtons = document.querySelectorAll('.send-mail-btn');
+    const questionButtons = document.querySelectorAll('.question-button');
+    
+    sendMailButtons.forEach(sendMailBtn => {
+        sendMailBtn.addEventListener('click', () => {
+            window.open('mailto:praneetha2829@gmail.com?subject=&body=', '_blank');
+        });
     });
-
-    statusCross.addEventListener('click', () => {
-        statusText.innerHTML = 'Rejected';
-        statusText.style.backgroundColor = 'var(--color-danger)';
+    
+    questionButtons.forEach(questionButton => {
+        questionButton.addEventListener('click', () => {
+            const seeDocLink = questionButton.nextElementSibling.href;
+            if (seeDocLink) {
+                window.open(seeDocLink, '_blank');
+            }
+        });
     });
+    
 
-    statusPen.addEventListener('click', () => {
-        const currentStatus = statusText.innerHTML;
-        if (currentStatus === 'Shortlisted') {
-            statusText.innerHTML = 'Rejected';
-            statusText.style.backgroundColor = 'var(--color-danger)';
-        } else if (currentStatus === 'Rejected') {
-            statusText.innerHTML = 'Shortlisted';
-            statusText.style.backgroundColor = 'var(--color-success)';
-        }
-    });
-
-    const sendMailBtn = document.querySelector('.action-icon.send-mail');
-    sendMailBtn.addEventListener('click', () => {
-        window.open('mailto:praneetha2829@gmail.com?subject=&body=', '_blank');
-    });
-
+      statusCells.forEach(statusCell => {
+          const statusText = statusCell.querySelector('.status-text');
+          const statusIcons = statusCell.querySelector('.status-icons');
+          const statusTick = statusIcons.querySelector('.status-icon.tick');
+          const statusCross = statusIcons.querySelector('.status-icon.cross');
+      
+          statusTick.addEventListener('click', () => {
+              statusText.innerHTML = 'Shortlisted';
+              statusText.style.backgroundColor = 'var(--color-success)';
+          });
+      
+          statusCross.addEventListener('click', () => {
+              statusText.innerHTML = 'Rejected';
+              statusText.style.backgroundColor = 'var(--color-danger)';
+          });
+      });
+      
