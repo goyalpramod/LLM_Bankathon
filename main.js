@@ -1,87 +1,89 @@
-const dropArea = document.querySelector(".drag-image"),
-dragText = dropArea.querySelector("h6"),
-button = dropArea.querySelector("button"),
-input = dropArea.querySelector("input");
-let file; 
+const dropArea = document.querySelector(".drag-image");
+const dragText = dropArea.querySelector("h6");
+const button = dropArea.querySelector("button");
+const input = dropArea.querySelector("input");
+let file;
 
-button.onclick = ()=>{
-  input.click(); 
-}
+button.onclick = () => {
+  input.click();
+};
 
-input.addEventListener("change", function(){
- 
+input.addEventListener("change", function() {
   file = this.files[0];
   dropArea.classList.add("active");
   viewfile();
 });
 
-dropArea.addEventListener("dragover", (event)=>{
+dropArea.addEventListener("dragover", (event) => {
   event.preventDefault();
   dropArea.classList.add("active");
   dragText.textContent = "Release to Upload File";
 });
 
-
-dropArea.addEventListener("dragleave", ()=>{
+dropArea.addEventListener("dragleave", () => {
   dropArea.classList.remove("active");
   dragText.textContent = "Drag & Drop to Upload File";
-}); 
-
-dropArea.addEventListener("drop", (event)=>{
-  event.preventDefault(); 
-   
-  file = event.dataTransfer.files[0];
-  viewfile(); 
 });
 
-function viewfile(){
-  let fileType = file.type; 
+dropArea.addEventListener("drop", (event) => {
+  event.preventDefault();
+  file = event.dataTransfer.files[0];
+  viewfile();
+});
+
+function viewfile() {
+  let fileType = file.type;
   let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
-  if(validExtensions.includes(fileType)){ 
-    let fileReader = new FileReader(); 
-    fileReader.onload = ()=>{
-      let fileURL = fileReader.result; 
-       let imgTag = `<img src="${fileURL}" alt="image">`;
-      dropArea.innerHTML = imgTag; 
-    }
+  if (validExtensions.includes(fileType)) {
+    let fileReader = new FileReader();
+    fileReader.onload = () => {
+      let fileURL = fileReader.result;
+      let imgTag = `<img src="${fileURL}" alt="image">`;
+      dropArea.innerHTML = imgTag;
+    };
     fileReader.readAsDataURL(file);
-  }else{
+  } else {
     alert("This is not an Image File!");
     dropArea.classList.remove("active");
     dragText.textContent = "Drag & Drop to Upload File";
   }
 }
 
+const sendMailButtons = document.querySelectorAll('.send-mail-btn');
+sendMailButtons.forEach(sendMailBtn => {
+  sendMailBtn.addEventListener('click', () => {
+    window.open('mailto:praneetha2829@gmail.com?subject=&body=', '_blank');
+  });
+});
 
-    const statusCell = document.querySelector('.status-cell');
-    const statusText = statusCell.querySelector('.status-text');
-    const statusTick = statusCell.querySelector('.status-icon.tick');
-    const statusCross = statusCell.querySelector('.status-icon.cross');
-    const statusPen = statusCell.querySelector('.status-icon.pen');
+const questionButtons = document.querySelectorAll('.question-button');
+questionButtons.forEach(questionButton => {
+  questionButton.addEventListener('click', () => {
+    const seeDocLink = questionButton.nextElementSibling.href;
+    if (seeDocLink) {
+      window.open(seeDocLink, '_blank');
+    }
+  });
+});
 
-    statusTick.addEventListener('click', () => {
-        statusText.innerHTML = 'Shortlisted';
-        statusText.style.backgroundColor = 'var(--color-success)';
-    });
+// Get all status cells and icons
+const statusCells = document.querySelectorAll('.status-cell');
 
-    statusCross.addEventListener('click', () => {
-        statusText.innerHTML = 'Rejected';
-        statusText.style.backgroundColor = 'var(--color-danger)';
-    });
+// Loop through each status cell and add event listeners
+statusCells.forEach(statusCell => {
+  const statusText = statusCell.querySelector('.status-text');
+  const statusIcons = statusCell.querySelector('.status-icons');
+  const statusTick = statusIcons.querySelector('.status-icon.tick');
+  const statusCross = statusIcons.querySelector('.status-icon.cross');
 
-    statusPen.addEventListener('click', () => {
-        const currentStatus = statusText.innerHTML;
-        if (currentStatus === 'Shortlisted') {
-            statusText.innerHTML = 'Rejected';
-            statusText.style.backgroundColor = 'var(--color-danger)';
-        } else if (currentStatus === 'Rejected') {
-            statusText.innerHTML = 'Shortlisted';
-            statusText.style.backgroundColor = 'var(--color-success)';
-        }
-    });
+  statusTick.addEventListener('click', () => {
+    statusText.innerHTML = 'Shortlisted';
+    statusText.style.backgroundColor = 'var(--color-success)';
+  });
 
-    const sendMailBtn = document.querySelector('.action-icon.send-mail');
-    sendMailBtn.addEventListener('click', () => {
-        window.open('mailto:praneetha2829@gmail.com?subject=&body=', '_blank');
-    });
+  statusCross.addEventListener('click', () => {
+    statusText.innerHTML = 'Rejected';
+    statusText.style.backgroundColor = 'var(--color-danger)';
+  });
+});
 
