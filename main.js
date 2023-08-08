@@ -86,3 +86,4 @@ statusCells.forEach(statusCell => {
     statusText.style.backgroundColor = 'var(--color-danger)';
   });
 });
+
