@@ -1,6 +1,7 @@
 from dotenv import load_dotenv, find_dotenv
 import openai
 import os
+import re
 from PyPDF2 import PdfReader
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage, AIMessage
@@ -10,7 +11,7 @@ openai.api_key = os.environ["OPENAI_API_KEY"]
 # from resume_parser import resumeparse
 # os.environ["OPENAI_API_KEY"] = ""
 
-with open("exampleCV.pdf", 'rb') as pdf:
+with open("test/exampleCV.pdf", 'rb') as pdf:
     pdf_reader = PdfReader(pdf)
     text = ((pdf_reader.pages[0]).extract_text())
     # data=resumeparse.read_file("Samarth_resume.pdf")
@@ -19,7 +20,7 @@ with open("exampleCV.pdf", 'rb') as pdf:
 data = text
 
 
-chat = ChatOpenAI(temperature=0.0, model_name="gpt-3.5-turbo-16k")
+chat = ChatOpenAI(temperature=0.4, model_name="gpt-3.5-turbo-16k")
 jd="SEO manager. High social marketing skills required"
 system_prompt = f"""
 You are an AI model that scores CVs using different criteria with different score points allocated to each criteria.
@@ -148,4 +149,35 @@ def func_(data):
     return store
 
 store = func_(data=data)
-print(store.content)
+
+def separator(store):
+    contents=store.content
+    name_pattern = r"Name:\s*(.*)"
+    email_pattern = r"Email:\s*(.*)"
+    phone_pattern = r"Phone:\s*(.*)"
+    cv_score_pattern = r"CV score\s*-\s*(\d+)/"
+    highlights_pattern = r"HIGHLIGHTS:(.*?)DEMERITS"
+    demerits_pattern = r"DEMERITS:(.*)"
+
+    # Extracting the information using regular expressions
+    name = re.search(name_pattern, contents).group(1)
+    email = re.search(email_pattern, contents).group(1)
+    phone = re.search(phone_pattern, contents).group(1)
+    cv_score = int(re.search(cv_score_pattern, contents).group(1).strip())
+
+    highlights_text = re.search(highlights_pattern, contents, re.DOTALL).group(1).strip()
+    highlights = [highlight.strip() for highlight in highlights_text.split("\n->")]
+
+    demerits_text = re.search(demerits_pattern, contents, re.DOTALL).group(1).strip()
+    demerits = [demerit.strip() for demerit in demerits_text.split("\n->")]
+    info_dict = {
+        "name": name,
+        "email": email,
+        "phone": phone,
+        "score": cv_score,
+        "highlights": highlights,
+        "demerits": demerits
+    }
+    return (info_dict)
+# print(separator(store)['name'])
+# print(store.content)
