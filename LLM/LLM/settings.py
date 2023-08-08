@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'LandingPage',
     'accounts',
     'dashboard',
+    'cvDashboard',
 ]
 
 MIDDLEWARE = [
