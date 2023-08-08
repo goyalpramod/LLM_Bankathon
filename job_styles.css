@@ -255,9 +255,11 @@ aside .sidebar .message-count{
     box-shadow: none;
   }
   
-  .right .recent-updates .update {
-    display: flex;
+  .right .recent-updates .updates .update {
+    display: grid;
+    grid-template-columns: 2.6rem auto;
     gap: 1rem;
+    margin-bottom: 1rem;
   }
   
   .right .recent-updates .update .profile-photo {
@@ -288,18 +290,6 @@ aside .sidebar .message-count{
 .right .recent-updates h2{
     margin-bottom: 0.8rem;
 }
-
-
-
-
-.right .recent-updates .updates .update{
-    display: grid;
-    grid-template-columns: 2.6rem auto;
-    gap: 1rem;
-
-
-}
-
 
 
 .drag-image.active {
