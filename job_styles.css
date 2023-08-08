@@ -50,10 +50,10 @@ body{
 .container{
     display: grid;
     color: var(--color-dark);
-    width: 96%;
+    width: 100%;
     margin: 0 auto;
     gap:1.8rem;
-    grid-template-columns: 14rem auto 23rem;
+    grid-template-columns: 18rem auto 25rem;
 }
 
 a{
@@ -113,6 +113,8 @@ aside{
     height: 100vh;
     background: var(--color-primary);
     color: var(--color-white);
+    padding: 1rem;
+   margin-left: 0;
 }
 aside .top{
     background: var(--color-primary);
@@ -205,7 +207,7 @@ aside .sidebar .message-count{
     display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
+margin-right:1rem;
 }
 
 .right .top{
@@ -218,18 +220,6 @@ aside .sidebar .message-count{
 
 .right .top button{
     display: none;
-}
-
-.right .theme-toggler{
-    background: rgba(217, 50, 99, 0.2);
-    color: var(--color-dark);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 1.6rem;
-    width: 4.2rem;
-    cursor: pointer;
-    border-radius: var(--border-radius-1);
 }
 
 .right .top .profile{
@@ -431,16 +421,18 @@ justify-content: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
-    height: 58%;
+    box-sizing: border-box;
+   box-shadow: var(--box-shadow);
+    height: 50%; /* Increase the height of the progress bar */
+    margin-top: 3rem; 
   }
   
-    .wrapper {
-    margin-top: 0%;
-      max-width: 330px;
-      font-family: 'Helvetica';
-      font-size: 14px;
-    }
+  .wrapper {
+    margin-top: 2%; /* Adjust the top margin */
+    max-width: 330px;
+
+    font-size: 16px; /* Increase the font size */
+}
 
     .StepProgress {
       position: relative;
@@ -458,10 +450,15 @@ justify-content: center;
       height: 100%;
     }
 
-    .StepProgress-item {
-      position: relative;
-      counter-increment: list;
-    }
+   .StepProgress-item {
+    position: relative;
+    counter-increment: list;
+    padding-bottom: 70px !important; /* Add more padding between steps */
+
+}
+.StepProgress-item:last-child::before {
+    display: none; /* Hide the line below the last step */
+}
 
     .StepProgress-item:not(:last-child) {
       padding-bottom: 20px;
