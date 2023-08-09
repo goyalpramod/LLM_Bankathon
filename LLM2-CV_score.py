@@ -20,7 +20,7 @@ with open("test/exampleCV.pdf", 'rb') as pdf:
 data = text
 
 
-chat = ChatOpenAI(temperature=0.4, model_name="gpt-3.5-turbo-16k")
+chat = ChatOpenAI(temperature=1, model_name="gpt-3.5-turbo-16k")
 jd="SEO manager. High social marketing skills required"
 system_prompt = f"""
 You are an AI model that scores CVs using different criteria with different score points allocated to each criteria.
