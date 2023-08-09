@@ -10,7 +10,7 @@ load_dotenv(find_dotenv())
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
 
-chat = ChatOpenAI(temperature=0.6, model_name="gpt-3.5-turbo-16k")
+chat = ChatOpenAI(temperature=1, model_name="gpt-3.5-turbo-16k")
 
 jd="SEO manager. High social marketing skills required"
 
