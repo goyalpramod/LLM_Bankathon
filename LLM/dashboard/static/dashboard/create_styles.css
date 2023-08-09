@@ -1,13 +1,47 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
   color: #595959;
   font-family: "Open Sans", sans-serif;
-  background-image: url("bg.png");
+  background-image: url("assets/Job-bg.jpg");
   background-size: cover;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.dashboard-button {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-button button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #d93263;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dashboard-button h2 {
+  margin: 0;
+  padding-right: 0.5rem;
+}
+
+.dashboard-button .material-symbols-sharp {
+  font-size: 1.5rem;
+  color: white;
 }
 
 #form-container {

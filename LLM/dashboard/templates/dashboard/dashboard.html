@@ -59,78 +59,80 @@
       </aside>
 
       <main>
-        <h1>Dashboard</h1>
+        <h1 class="title">Dashboard</h1>
 
-        <div class="date">
-          <input type="date" id="dateInput" placeholder="DD/MM/YYYY" />
-        </div>
-
-        <div class="actions">
-          <a href="{% url 'create_job' %}" class="create">
-            <div class="middle">
-              <div class="icon-container">
-                <span class="material-symbols-sharp"> add </span>
+        <div class="cards-links">
+          <div class="actions job">
+            <a href="{% url 'create_job' %}">
+              <div class="card">
+                <div class="icon-container">
+                  <span class="material-symbols-sharp">add</span>
+                </div>
+                <h3>Create Job</h3>
               </div>
-              <h3>Create Job</h3>
-            </div>
-          </a>
+            </a>
+          </div>
 
-          <div class="see">
-            <div class="middle">
-              <div class="icon-container">
-                <span class="material-symbols-sharp"> add </span>
-              </div>
-              <h3>Job Title 1</h3>
-              <small class="text-muted">Created on 01/08/2023</small>
+          <div class="actions job">
+            <div class="card">
+              <img
+                src="{% static 'dashboard/assets/job_an.png' %}"
+                alt=""
+                class="card-image"
+              />
+              <h3>Angular Developer</h3>
+              <small class="text-muted">Created on 04/08/2023</small>
             </div>
           </div>
-          <div class="dont">
-            <div class="middle">
-              <div class="icon-container">
-                <span class="material-symbols-sharp"> add </span>
-              </div>
-              <h3>Job Title 2</h3>
-              <small class="text-muted">Created on 01/08/2023</small>
+          <div class="actions job">
+            <div class="card">
+              <img
+                src="{% static 'dashboard/assets/job_py.png' %}"
+                alt=""
+                class="card-image"
+              />
+              <h3>Python Developer</h3>
+              <small class="text-muted">Created on 02/08/2023</small>
             </div>
           </div>
         </div>
 
         <!-- Additional cards with "Manage Jobs" heading -->
-        <h2>Manage Jobs</h2>
+        <h2 class="manage-jobs-title">Manage Jobs</h2>
         <div class="cards-links">
-          <div class="actions">
-            <div class="job">
-              <div class="middle">
-                <div class="icon-container">
-                  <span class="material-symbols-sharp"> add </span>
-                </div>
-                <h3>Job Title 3</h3>
-                <small class="text-muted">Created on 01/08/2023</small>
-              </div>
+          <div class="actions job">
+            <div class="card">
+              <img
+                src="{% static 'dashboard/assets/job_BACK.png' %}"
+                alt=""
+                class="card-image"
+              />
+              <h3>Back-end Developer</h3>
+              <small class="text-muted">Created on 02/08/2023</small>
             </div>
           </div>
 
-          <div class="actions">
-            <div class="job">
-              <div class="middle">
-                <div class="icon-container">
-                  <span class="material-symbols-sharp"> add </span>
-                </div>
-                <h3>Job Title 4</h3>
-                <small class="text-muted">Created on 01/08/2023</small>
-              </div>
+          <div class="actions job">
+            <div class="card">
+              <img
+                src="{% static 'dashboard/assets/job_py.png' %}"
+                alt=""
+                class="card-image"
+              />
+              <h3>Product manager</h3>
+              <small class="text-muted">Created on 02/08/2023</small>
             </div>
           </div>
 
-          <div class="actions">
-            <div class="job">
-              <div class="middle">
-                <div class="icon-container">
-                  <span class="material-symbols-sharp"> add </span>
-                </div>
-                <h3>Job Title 5</h3>
-                <small class="text-muted">Created on 01/08/2023</small>
-              </div>
+          <div class="actions job">
+            <div class="card">
+              <img
+                src="{% static 'dashboard/assets/job_mlpng.png' %}"
+                alt=""
+                class="card-image"
+              />
+              <h3>ML Engineer</h3>
+              <small class="text-muted">Created on 01/08/2023</small>
             </div>
           </div>
         </div>
@@ -139,19 +141,15 @@
       <div class="right">
         <div class="top">
           <button id="menu-btn">
-            <span class="material-symbols-sharp"> menu </span>
+            <span class="material-symbols-sharp">menu</span>
           </button>
-
           <div class="profile">
             <div class="info">
               <p>Hey, <b>Gourav</b></p>
               <small class="text-muted">Admin</small>
             </div>
             <div class="profile-photo">
-              <img
-                src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.stack.imgur.com%2Fwb3fS.png&tbnid=s0-fNUsY5SqDSM&vet=12ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ..i&imgrefurl=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F72492218%2Fdjango-user-model-employee-and-customer&docid=6rlVW4oihbKxcM&w=1632&h=1394&q=django%20user%20model&ved=2ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ"
-                alt=""
-              />
+              <img src="{% static 'dashboard/assets/Gouravv.png' %}" alt="" />
             </div>
           </div>
         </div>
@@ -160,12 +158,13 @@
           <div class="updates">
             <div class="update">
               <div class="profile-photo">
-                <img
-                  src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.stack.imgur.com%2Fwb3fS.png&tbnid=s0-fNUsY5SqDSM&vet=12ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ..i&imgrefurl=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F72492218%2Fdjango-user-model-employee-and-customer&docid=6rlVW4oihbKxcM&w=1632&h=1394&q=django%20user%20model&ved=2ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ"
-                />
+                <img src="{% static 'dashboard/assets/updates.png' %}" />
               </div>
               <div class="message">
-                <p>The candidates have been <b>shortlisted!</b></p>
+                <p>
+                  The candidates have been <b>ranked</b> for
+                  <b>Angular Developer.</b>
+                </p>
                 <small class="text-muted">2 mins ago</small>
               </div>
             </div>
@@ -173,26 +172,25 @@
           <div class="updates">
             <div class="update">
               <div class="profile-photo">
-                <img
-                  src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.stack.imgur.com%2Fwb3fS.png&tbnid=s0-fNUsY5SqDSM&vet=12ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ..i&imgrefurl=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F72492218%2Fdjango-user-model-employee-and-customer&docid=6rlVW4oihbKxcM&w=1632&h=1394&q=django%20user%20model&ved=2ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ"
-                />
+                <img src="{% static 'dashboard/assets/updates.png' %}" />
               </div>
               <div class="message">
-                <p>The candidates have been <b>shortlisted!</b></p>
-                <small class="text-muted">2 mins ago</small>
+                <p>
+                  The candidates have been <b>shortlisted</b> for
+                  <b>Python Developer.</b>
+                </p>
+                <small class="text-muted">1 hr ago</small>
               </div>
             </div>
           </div>
           <div class="updates">
             <div class="update">
               <div class="profile-photo">
-                <img
-                  src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.stack.imgur.com%2Fwb3fS.png&tbnid=s0-fNUsY5SqDSM&vet=12ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ..i&imgrefurl=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F72492218%2Fdjango-user-model-employee-and-customer&docid=6rlVW4oihbKxcM&w=1632&h=1394&q=django%20user%20model&ved=2ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ"
-                />
+                <img src="{% static 'dashboard/assets/updates.png' %}" />
               </div>
               <div class="message">
-                <p>The candidates have been <b>shortlisted!</b></p>
-                <small class="text-muted">2 mins ago</small>
+                <p>Welcome to <b>AxisHR!</b></p>
+                <small class="text-muted">2 days ago</small>
               </div>
             </div>
           </div>
@@ -202,3 +200,5 @@
     <script src="main.js"></script>
   </body>
 </html>
+
+{% static 'dashboard/assets/updates.png' %}
