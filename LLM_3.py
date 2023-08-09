@@ -10,7 +10,7 @@ load_dotenv(find_dotenv())
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
 
-chat = ChatOpenAI(temperature=1, model_name="gpt-3.5-turbo-16k")
+chat = ChatOpenAI(temperature=0.6, model_name="gpt-3.5-turbo-16k")
 
 jd="SEO manager. High social marketing skills required"
 
@@ -18,9 +18,8 @@ system_prompt = f"""
 You are an AI model that provides a questionnaire for a job interview based on job description.
 A detailed job description will be provided to you in triple back ticks. 
 The job description is ```{jd}```
-Generate at least 20 questions with their toughness and toughness score.
-Also provide answers for them.
-Scale the question toughness with respect to the previous experience requirements. 
+Generate at least 10 questions with their toughness and toughness score.
+Also provide answers in brief for them.
 IMPORTANT do not reply with "As an AI model..." under any circumstances 
 """
 
@@ -168,12 +167,13 @@ An application server is a software framework that allows the creation of both w
 Referential transparency is a term used in functional programming to replace the expression without changing the final result of the program. This means that whether the input used is a reference or an actual value that the reference is pointing to the program's behavior is not changed.
 """
 
-def func_():
+def func_(data):
     store = chat(
         [
             SystemMessage(content=system_prompt),
             HumanMessage(content=human_message_example),
-            AIMessage(content=AI_message_example)
+            AIMessage(content=AI_message_example),
+            HumanMessage(content=data)
         ]
     )
     return store
