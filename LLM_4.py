@@ -14,7 +14,7 @@ with open(r"test\transcript.txt", 'r') as transcript:
     lines=transcript.readlines()
     data="\n".join(lines)
 
-chat = ChatOpenAI(temperature=0.0, model_name="gpt-3.5-turbo-16k")
+chat = ChatOpenAI(temperature=1, model_name="gpt-3.5-turbo-16k")
 
 jd="Mechanical Engineer intern"
 
