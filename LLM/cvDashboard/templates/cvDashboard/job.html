@@ -59,13 +59,34 @@
       </aside>
 
       <main>
-        <h1>Angular Developer</h1>
-        <div class="drag-image" id="dragCard">
-          <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-          <h6>Drag & Drop File Here</h6>
-          <span>OR</span>
-          <button>Browse File</button>
-          <input type="file" hidden />
+        <h1 class="job_title">Angular Developer</h1>
+        <div class="cards-row">
+          <div class="drag-image" id="dragCard">
+            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <h6>Drag & Drop File Here</h6>
+            <span>OR</span>
+            <button>Browse File</button>
+            <input type="file" hidden />
+          </div>
+          <div class="card number-input text-styled">
+            <h3>Select no. of candidates</h3>
+            <input type="number" id="candidateCount" value="1" min="1" />
+          </div>
+          <div class="card team-collaboration text-styled">
+            <h3>Add Collaborators</h3>
+            <div class="collaborator-input">
+              <input
+                type="email"
+                id="gmailInput"
+                placeholder="Enter Gmail ID"
+              />
+              <button class="invite-button">Invite</button>
+            </div>
+            <div class="collaborator-list"></div>
+          </div>
+        </div>
+        <div class="save-btn-container">
+          <button class="save-btn">Save</button>
         </div>
         <div class="job-table">
           <h2>Job applicants</h2>
@@ -142,10 +163,7 @@
               <small class="text-muted">Admin</small>
             </div>
             <div class="profile-photo">
-              <img
-                src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.stack.imgur.com%2Fwb3fS.png&tbnid=s0-fNUsY5SqDSM&vet=12ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ..i&imgrefurl=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F72492218%2Fdjango-user-model-employee-and-customer&docid=6rlVW4oihbKxcM&w=1632&h=1394&q=django%20user%20model&ved=2ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ"
-                alt=""
-              />
+              <img src="{% static 'cvDashboard/assets/Gouravv.png'%}" alt="" />
             </div>
           </div>
         </div>
@@ -154,9 +172,7 @@
           <div class="updates">
             <div class="update">
               <div class="profile-photo">
-                <img
-                  src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.stack.imgur.com%2Fwb3fS.png&tbnid=s0-fNUsY5SqDSM&vet=12ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ..i&imgrefurl=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F72492218%2Fdjango-user-model-employee-and-customer&docid=6rlVW4oihbKxcM&w=1632&h=1394&q=django%20user%20model&ved=2ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ"
-                />
+                <img src="{% static 'cvDashboard/assets/updates.png'%}" />
               </div>
               <div class="message">
                 <p>The candidates have been <b>shortlisted!</b></p>
@@ -167,9 +183,7 @@
           <div class="updates">
             <div class="update">
               <div class="profile-photo">
-                <img
-                  src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.stack.imgur.com%2Fwb3fS.png&tbnid=s0-fNUsY5SqDSM&vet=12ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ..i&imgrefurl=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F72492218%2Fdjango-user-model-employee-and-customer&docid=6rlVW4oihbKxcM&w=1632&h=1394&q=django%20user%20model&ved=2ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ"
-                />
+                <img src="{% static 'cvDashboard/assets/updates.png'%}" />
               </div>
               <div class="message">
                 <p>The candidates have been <b>shortlisted!</b></p>
@@ -180,13 +194,11 @@
           <div class="updates">
             <div class="update">
               <div class="profile-photo">
-                <img
-                  src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.stack.imgur.com%2Fwb3fS.png&tbnid=s0-fNUsY5SqDSM&vet=12ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ..i&imgrefurl=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F72492218%2Fdjango-user-model-employee-and-customer&docid=6rlVW4oihbKxcM&w=1632&h=1394&q=django%20user%20model&ved=2ahUKEwjuqsTM2MeAAxUyoekKHWKBDVcQMygBegUIARDcAQ"
-                />
+                <img src="{% static 'cvDashboard/assets/updates.png'%}" />
               </div>
               <div class="message">
-                <p>The candidates have been <b>shortlisted!</b></p>
-                <small class="text-muted">2 mins ago</small>
+                <p>Welcome to <b>AxisHR!</b></p>
+                <small class="text-muted">2 days ago</small>
               </div>
             </div>
           </div>
@@ -196,19 +208,28 @@
           <div class="wrapper">
             <ul class="StepProgress">
               <div class="StepProgress-item is-done">
-                <strong>Post a contest</strong>
+                <strong>Job Creation</strong>
               </div>
               <div class="StepProgress-item is-done">
-                <strong>Award an entry</strong>
+                <strong>CVs uploaded</strong>
               </div>
               <div class="StepProgress-item is-done">
-                <strong>Post a contest</strong>
+                <strong>Status Processing</strong>
               </div>
               <div class="StepProgress-item current">
-                <strong>Handover</strong>
+                <strong>Status verification</strong>
               </div>
               <div class="StepProgress-item current">
-                <strong>Provide feedback</strong>
+                <strong>Mail Dispatch</strong>
+              </div>
+              <div class="StepProgress-item current">
+                <strong>Question Formulation</strong>
+              </div>
+              <div class="StepProgress-item current">
+                <strong>Interview Scoring</strong>
+              </div>
+              <div class="StepProgress-item current">
+                <strong>Final Candidate Selection</strong>
               </div>
             </ul>
           </div>
