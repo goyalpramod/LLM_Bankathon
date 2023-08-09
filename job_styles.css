@@ -465,7 +465,7 @@ aside .sidebar .message-count{
    .StepProgress-item {
     position: relative;
     counter-increment: list;
-    padding-bottom: 70px !important; 
+    padding-bottom: 40px !important; 
 
 }
 .StepProgress-item:last-child::before {
@@ -499,7 +499,7 @@ aside .sidebar .message-count{
     }
 
     .StepProgress-item.is-done::before {
-      border-left: 2px solid green;
+      border-left: 2px solid #D93263;
     }
 
     .StepProgress-item.is-done::after {
@@ -507,12 +507,12 @@ aside .sidebar .message-count{
       font-size: 13px;
       color: #FFF;
       text-align: center;
-      border: 2px solid green;
-      background-color: green;
+      border: 2px solid #D93263;
+      background-color: #D93263;
     }
 
     .StepProgress-item.current::before {
-      border-left: 2px solid green;
+      border-left: 2px solid #D93263;
     }
 
     .StepProgress-item.current::after {
@@ -524,8 +524,8 @@ aside .sidebar .message-count{
       left: -40px;
       font-size: 14px;
       text-align: center;
-      color: green;
-      border: 2px solid green;
+      color: #D93263;
+      border: 2px solid #D93263;
       background-color: white;
     }
 
@@ -607,6 +607,7 @@ main .job-table a{
 .main table tbody tr td.status-cell {
     display: flex; 
   align-items: center;
+  
 }
 
 
@@ -616,7 +617,8 @@ main .job-table a{
     background-color: transparent;
     cursor: pointer;
     padding: 0.2rem;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     margin-left: 5px;
 }
 
@@ -645,12 +647,12 @@ main .job-table a{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-   background-color: rgba(217, 50, 99, 0.9);
+   background-color: var(--color-primary);
 }
 
 .card {
     background-color: var(--color-white);
-    border: 1px solid var(--color-info-dark);
+    border: 1px solid var(--color-primary);
     border-radius: var(--border-radius-1);
     border-radius: 5px;
     display: flex;
@@ -748,3 +750,9 @@ main .job-table a{
 .job_title{
     margin-top:1.4rem ;
 }
+.profile-photo img,
+  .update .profile-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
