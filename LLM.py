@@ -14,40 +14,40 @@ load_dotenv(find_dotenv())
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
 
-data = """
-Billing Manager,Responsibilities
-Oversee the preparation of statements and bills
-Maintain and/or ensure maintenance of client records related to invoicing and bill payment
-Review work of billing staff to ensure accuracy, resolving inconsistencies as needed
-Create and provide a prioritized list of clients to be invoiced to team members
-Locate, or assist in the location of, hard-to-reach clients
-Draft and distribute weekly reports of invoicing and billing metrics
-Advise staff on proper, legal parameters for collections practices
-Provide customer support to customers with disputes or inquiries concerning invoices or billing process
-Requirements and skills
-Proven work experience as a Billing Manager or similar role
-Excellent verbal and written communication skills
-Proficient in Microsoft Office Suite or related software
-Basic understanding of collection practices and laws
-Excellent interpersonal and supervisory skills
-Ability to act with discretion, tact, and professionalism in all situations
-Relevant training and/or certifications as a Billing Manager
-"""
+# data = """
+# Billing Manager,Responsibilities
+# Oversee the preparation of statements and bills
+# Maintain and/or ensure maintenance of client records related to invoicing and bill payment
+# Review work of billing staff to ensure accuracy, resolving inconsistencies as needed
+# Create and provide a prioritized list of clients to be invoiced to team members
+# Locate, or assist in the location of, hard-to-reach clients
+# Draft and distribute weekly reports of invoicing and billing metrics
+# Advise staff on proper, legal parameters for collections practices
+# Provide customer support to customers with disputes or inquiries concerning invoices or billing process
+# Requirements and skills
+# Proven work experience as a Billing Manager or similar role
+# Excellent verbal and written communication skills
+# Proficient in Microsoft Office Suite or related software
+# Basic understanding of collection practices and laws
+# Excellent interpersonal and supervisory skills
+# Ability to act with discretion, tact, and professionalism in all situations
+# Relevant training and/or certifications as a Billing Manager
+# """
 
-chat = ChatOpenAI(temperature=.7,model_name="gpt-3.5-turbo-16k")
+chat = ChatOpenAI(temperature=1.05,model_name="gpt-3.5-turbo-16k")
 
 system_prompt = """
 You are an AI model that helps streamline the process of hiring for HRs, by making the job description provided to you better based on the job title by suggesting improvements 
 
-You will be provided the job title then the job description seperated by comma (,) 
+You will be provided the job title and then the job description separated by a comma (,) 
 You are required to provide improvements on the job description after reading both the job title and job description based on the job title 
-first mention in bullet points what can be removed in the given job description and what can be added 
-Then add the texts in the required location
-Also provide information on additional information that should be present in a Job description like company values, benefits and any other relevant information
-Also give the original job description a score out of 10 based on the job title
+
+Also provide information on additional information that should be present in a Job description like company values, benefits, and any other relevant information
+
+Also, give the original job description a score out of 10 based on its relevance to the job title and how well the Job description has been made
 
 IMPORTANT do not reply with "As an AI model..." under any circumstances 
-IMPORTANT DO NOT REMOVE OR CHANGE ANY OF THE ORIGINAL TEXT PROVIDED TO YOU THAT ARE NOT GETTING IMPROVED
+IMPORTANT DO NOT REMOVE OR CHANGE ANY OF THE ORIGINAL TEXT PROVIDED TO YOU THAT ARE NOT GETTING IMPROVED 
 """
 
 human_message_example = """
