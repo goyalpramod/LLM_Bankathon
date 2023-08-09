@@ -35,10 +35,13 @@
   </style>
   <body>
     <div class="dashboard-button">
-      <button>
-        <h2>Dashboard</h2>
-        <span class="material-symbols-sharp"> arrow_forward </span>
-      </button>
+      <a href="{% url 'cvDashboard:cv_page' %}" class="dashboard-button-link" style="text-decoration: none;">
+        <button>
+          <h2>Dashboard</h2>
+          <span class="material-symbols-sharp"> arrow_forward </span>
+        </button>
+      </a>
+    </div>
     </div>
     <div id="form-container">
       <h1>Job Description Form</h1>

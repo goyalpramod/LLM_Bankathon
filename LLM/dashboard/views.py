@@ -20,6 +20,7 @@ def process_form(request):
         data = json.loads(request.body)
         job_title = data.get('job-title')
         job_description = data.get('job-description')
+        request.session['job_title'] = job_title
 
         formatted_data = f"{job_title},{job_description}"
         values = func_(data=formatted_data)

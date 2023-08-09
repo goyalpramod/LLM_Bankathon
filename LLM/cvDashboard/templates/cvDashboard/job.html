@@ -27,7 +27,13 @@
       <aside>
         <div class="top">
           <div class="logo">
-            <h1>HRLogicx</h1>
+            <h1>
+              <img
+                src="{% static 'LandingPage/assets/logo_white.png'%}"
+                alt=""
+                style="width: 10rem"
+              />
+            </h1>
           </div>
           <div class="close" id="close-btn">
             <span class="material-symbols-sharp"> close </span>
@@ -59,7 +65,7 @@
       </aside>
 
       <main>
-        <h1 class="job_title">Angular Developer</h1>
+        <h1 class="job_title">{{ job_title }}</h1>
         <div class="cards-row">
           <div class="drag-image" id="dragCard">
             <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
