@@ -71,8 +71,12 @@
             <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
             <h6>Drag & Drop File Here</h6>
             <span>OR</span>
-            <button>Browse File</button>
-            <input type="file" hidden />
+            <form action="{%url 'list'%}" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <p>
+                {{ form.file}}
+              <p><input type="submit" value="Upload"></p>
+            </form>
           </div>
           <div class="card number-input text-styled">
             <h3>Select no. of candidates</h3>
@@ -242,6 +246,6 @@
         </div>
       </div>
     </div>
-    <script src="{% static 'cvDashboard/main.js' %}"></script>
+<!--    <script src="{% static 'cvDashboard/main.js' %}"></script>-->
   </body>
 </html>
