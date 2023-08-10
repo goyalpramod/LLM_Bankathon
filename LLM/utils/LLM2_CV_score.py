@@ -11,33 +11,29 @@ openai.api_key = os.environ["OPENAI_API_KEY"]
 # from resume_parser import resumeparse
 # os.environ["OPENAI_API_KEY"] = ""
 
-# with open("test/exampleCV.pdf", 'rb') as pdf:
+# with open("/home/samarthrawat1/Downloads/720CH1018_SamarthRawat_Dual_Ch_Intern_1.pdf", 'rb') as pdf:
 #     pdf_reader = PdfReader(pdf)
 #     text = ((pdf_reader.pages[0]).extract_text())
-    # data=resumeparse.read_file("Samarth_resume.pdf")
 # print(text)
-# print(data)
 # data = text
 
 
-chat = ChatOpenAI(temperature=1, model_name="gpt-3.5-turbo-16k")
+chat = ChatOpenAI(temperature=0.5, model_name="gpt-3.5-turbo-16k")
 jd="SEO manager. High social marketing skills required"
 system_prompt = f"""
-You are an AI model that scores CVs using different criteria with different score points allocated to each criteria.
-You will be provided the parsed data of a CV using regular parser. 
-There may be some words spelled wrong or joined words due to formatting issues, try and fix them yourself. 
-Make sure the following is available in the CV:
-1. College and degree awarded
-
-The most important scoring criteria is relevance the to the job description
-The jd is provided to you in triple back ticks 
-```{jd}```
+You are an AI model that scores CVs.
+You will be provided the data of a CV. 
+The most important scoring criteria is relevance to the job description.
+The job description will be provided to you.
 Maximum score of the CV can be 150
 IMPORTANT do not reply with "As an AI model..." under any circumstances 
 IMPORTANT DO NOT REMOVE OR CHANGE ANY OF THE ORIGINAL TEXT PROVIDED TO YOU THAT ARE NOT GETTING IMPROVED
+IMPORTANT Always mention a CV score and details of the candidate like name, phone, email
 """
 
-human_message_example = """
+human_message_example = f"""
+
+Job desription ={jd}
 Samarth Rawat
 B.Tech.+ M.Tech.|NIT Rourkela
 Pre‐Final Year, Chemical Engg.
@@ -146,19 +142,19 @@ def func_(CV):
             SystemMessage(content=system_prompt),
             HumanMessage(content=human_message_example),
             AIMessage(content=AI_message_example),
-            HumanMessage(content=data)
+            HumanMessage(content=jd+'\n'+data)
         ]
     )
     return store
 
-# store = func_(data=data)
-
+# store = func_(data)
+# print((store.content))
 def separator(store):
     contents=store.content
     name_pattern = r"Name:\s*(.*)"
     email_pattern = r"Email:\s*(.*)"
     phone_pattern = r"Phone:\s*(.*)"
-    cv_score_pattern = r"CV score\s*-\s*(\d+)/"
+    cv_score_pattern = r"CV score\s*.\s*(\d+)/"
     highlights_pattern = r"HIGHLIGHTS:(.*?)DEMERITS"
     demerits_pattern = r"DEMERITS:(.*)"
 
@@ -168,19 +164,18 @@ def separator(store):
     phone = re.search(phone_pattern, contents).group(1)
     cv_score = int(re.search(cv_score_pattern, contents).group(1).strip())
 
-    highlights_text = re.search(highlights_pattern, contents, re.DOTALL).group(1).strip()
-    highlights = [highlight.strip() for highlight in highlights_text.split("\n->")]
+    # highlights_text = re.search(highlights_pattern, contents, re.DOTALL).group(1).strip()
+    # highlights = [highlight.strip() for highlight in highlights_text.split("\n->")]
 
-    demerits_text = re.search(demerits_pattern, contents, re.DOTALL).group(1).strip()
-    demerits = [demerit.strip() for demerit in demerits_text.split("\n->")]
+    # demerits_text = re.search(demerits_pattern, contents, re.DOTALL).group(1).strip()
+    # demerits = [demerit.strip() for demerit in demerits_text.split("\n->")]
     info_dict = {
         "name": name,
         "email": email,
         "phone": phone,
         "score": cv_score,
-        "highlights": highlights,
-        "demerits": demerits
+        # "highlights": highlights,
+        # "demerits": demerits
     }
     return (info_dict)
-# print(separator(store)['name'])
-# print(store.content)
+# print(separator(store))
