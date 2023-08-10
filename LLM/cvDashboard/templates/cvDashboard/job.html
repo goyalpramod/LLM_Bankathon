@@ -20,6 +20,33 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp"
       rel="stylesheet"
     />
+    <style>
+      /* #dragCard {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      } */
+
+      #dragCard p {
+        margin: 0; /* Removes default paragraph margins */
+      }
+
+      #dragCard input[type="file"],
+      #dragCard input[type="submit"] {
+        margin-right: 10px; /* Spacing between the two buttons */
+      }
+      .file-upload-label {
+        padding: 10px 15px;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #selectedFileName {
+        margin-left: 10px;
+      }
+    </style>
   </head>
 
   <body>
@@ -68,13 +95,29 @@
         <h1 class="job_title">{{ job_title }}</h1>
         <div class="cards-row">
           <div class="drag-image" id="dragCard">
-            <form action="{%url 'list'%}" method="post" enctype="multipart/form-data">
+            <form
+              action="{%url 'list'%}"
+              method="post"
+              enctype="multipart/form-data"
+            >
               {% csrf_token %}
-              <p>
-                {{ form.file}}
-              <p><input type="submit" value="Upload"></p>
+
+              <label for="id_file" class="file-upload-label">
+                Browse
+                <input
+                  type="file"
+                  id="id_file"
+                  name="file"
+                  style="display: none"
+                  onchange="displayFileName(event)"
+                />
+              </label>
+              <span id="selectedFileName">No file chosen</span>
+
+              <input type="submit" value="Upload" />
             </form>
           </div>
+
           <div class="card number-input text-styled">
             <h3>Select no. of candidates</h3>
             <input type="number" id="candidateCount" value="1" min="1" />
@@ -243,6 +286,6 @@
         </div>
       </div>
     </div>
-<!--    <script src="{% static 'cvDashboard/main.js' %}"></script>-->
+    <script src="{% static 'cvDashboard/main.js' %}"></script>
   </body>
 </html>
