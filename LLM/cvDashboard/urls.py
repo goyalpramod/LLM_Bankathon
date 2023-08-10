@@ -7,6 +7,5 @@ app_name = 'cvDashboard'
 urlpatterns = [
     path('cvDashboard/', views.cv_page, name='cv_page'),
     path('job/', views.cv_page, name='cv_page'),
-    path('list/', views.upload_file, name='list'),
-
+    path('list/', views.upload_file, name='cv_name'),
 ]

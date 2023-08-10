@@ -30,10 +30,17 @@ def upload_file(request):
         print(separatedData)
         CVname=separatedData['name']
         CVscore=separatedData['score']
-        return (HttpResponse(str(separatedData)))
+        context = {
+            'form': form,
+            'CVname': CVname,
+            'CVscore': CVscore
+        }
+        return render(request, "cvDashboard/job.html", context)
+
+        # return render(request, "job.html", {"form": form}, {"CVname" : CVname}, {"CVscore : CVscore"})
     else:
         form = UploadFileForm()
-    return render(request, "job.html", {"form": form})
+    return render(request, "cvDashboard/job.html", {"form": form})
 
     #     if form.is_valid():
     #         handle_uploaded_file(request.FILES["file"])

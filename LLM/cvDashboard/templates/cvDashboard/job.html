@@ -96,7 +96,7 @@
         <div class="cards-row">
           <div class="drag-image" id="dragCard">
             <form
-              action="{%url 'list'%}"
+              action="{% url 'cvDashboard:cv_name' %}"
               method="post"
               enctype="multipart/form-data"
             >
@@ -145,8 +145,7 @@
               <tr>
                 <th>Ranking</th>
                 <th>Applicant Name</th>
-                <th>Positive</th>
-                <th>Negative</th>
+                <th>Score</th>
                 <th>Status</th>
                 <th>Action</th>
                 <th>Questions</th>
@@ -155,9 +154,8 @@
             <tbody>
               <tr>
                 <td>1</td>
-                <td>Mallika</td>
-                <td>Pretty</td>
-                <td>Stupid</td>
+                <td>{{CVname}}</td>
+                <td>{{CVscore}}</td>
                 <td class="status-cell">
                   <div class="status-text">Shortlisted</div>
                   <button class="status-icon tick">
@@ -184,20 +182,16 @@
               <tr>
                 <td>2</td>
                 <td>yuta</td>
-                <td>Pretty</td>
-                <td>Stupid</td>
+                <td>85</td>
                 <td class="danger">Rejected</td>
                 <td>Send Rejection mail</td>
-                <td>Archive</td>
               </tr>
               <tr>
                 <td>3</td>
                 <td>Preetam</td>
-                <td>Pretty</td>
-                <td>Stupid</td>
+                <td>30</td>
                 <td class="danger">Rejected</td>
                 <td>Send rejection mail</td>
-                <td>Archive</td>
               </tr>
             </tbody>
           </table>
