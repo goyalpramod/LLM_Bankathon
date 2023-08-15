@@ -17,7 +17,17 @@ Contents
 
 ### Installation:
 ---
-This guide will walk you through the steps to set up and run the application. Make sure you have a compatible version of Python installed (Python 3.6 or higher).
+This guide will walk you through the steps to set up and run the application. Ensure you have a compatible version of Python installed (Python 3.6 or higher).
+
+#### Method 1: Quick Setup
+For a hassle-free installation, follow these steps:
+1. Run the batch script on Windows:
+```bat_setup.bat ```
+
+2. Alternatively, if you are using a bash terminal, execute the following command:
+```sh ./setup.sh```
+
+#### Method 2: Manual Setup
 
 #### Step 1: Clone the Repository
 
