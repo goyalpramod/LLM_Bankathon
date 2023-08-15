@@ -6,6 +6,7 @@ certifi==2023.7.22
 charset-normalizer==3.2.0
 colorama==0.4.6
 dataclasses-json==0.5.14
+Django==4.2.4
 faiss-cpu==1.7.4
 frozenlist==1.4.0
 greenlet==2.0.2
@@ -24,6 +25,7 @@ packaging==23.1
 pydantic==1.10.12
 python-dotenv==1.0.0
 PyYAML==6.0.1
+PyPDF2==3.0.1
 requests==2.31.0
 SQLAlchemy==2.0.19
 tenacity==8.2.2
