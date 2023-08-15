@@ -13,7 +13,7 @@ Contents
 * [Features Added](#features-added)
 * [Future Scope](#future-scope)
 * [Snapshots](#snapshots)
-* [Demo Video](#demo-video)
+* [Deployed Link](#deployed-link)
 
 ### Installation:
 ---
@@ -135,8 +135,10 @@ Introduce an advanced social media crawler to analyze candidates' online presenc
 </li></br>
 </ol>
 
-### Snapshots
+### Deployed Link 
 ---
+
+[Deployed Link](http://52.255.177.160)
 
 ### Note 
 
