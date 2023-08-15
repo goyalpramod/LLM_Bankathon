@@ -84,6 +84,11 @@ python manage.py runserver
 #### Step 6: Access the Application
 Open your web browser and go to http://127.0.0.1:8000/ 
 
+### IMPORTANT
+The login credentials are 
+- Email: gourav@axisbank.com
+- Password: 1234
+
 ### Tech-Stacks Used:
 ---
 
